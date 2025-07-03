@@ -1,0 +1,296 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    background-color: #f9f9f9;
+    padding: 25px 12.5px;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:7px solid #e69b01;
+    z-index: 100;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+
+/* Updated logo styling */
+.logo {
+    width: 137px;   /* Adjust the size as needed */
+    height: 71px;   /* Keeps the aspect ratio */
+    padding-left: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: rgb(12, 11, 11);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* Hero Section */
+.hero {
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 550px;
+    background-image: url('virtuele-tour-groot-v2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #f9f9f9;
+    
+    margin-top: -2.2vh;
+    
+
+}
+
+/* Optional overlay for readability */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.hero h1, .nirf {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: #f9f9f9;
+}
+
+.nirf {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #f9f9f9;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    padding: 10px;
+    border-radius: 8px;
+}
+.newback {
+    width: 100%;
+    height: 100vh;
+    background: url('virtuele-tour-groot-v2.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(7px);
+}
+
+.container {
+    display: flex;
+    position: absolute;
+    margin-bottom: 20px;
+    left: 0;
+    height: 70%;
+    width: 58%;
+    justify-content: center;
+    background:transparent;
+    padding: 80px;
+    flex-direction: column;
+    text-align: left;
+    color: #f9f9f9;
+
+}
+.largbox {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right:  0;
+    height: 100%;
+    width: calc(90% - 58%);
+    background: transparent;
+    z-index: 1;
+    overflow: hidden;
+   
+    
+    
+
+}
+.social_icons a {
+    font-size: 22px;
+    color: #f9f9f9;
+    margin-right: 10px;
+    transition: .5s ease;
+}
+.social_icons a:hover {
+    transform: scale(1.2);
+
+}
+.container h2{ 
+    font-size: 40px;
+    
+}
+.text h2 span {
+    font-size: 25px;
+    line-height: 1;
+}
+.text.h2 {
+    font-size: 30px;
+}
+.box_login {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #f9f9f9;
+
+
+}
+.box_login{
+    transform: translateX(0);
+    transition: transform .6s ease;
+}
+.largbox.active.box_login {
+    transform: translateX(430px);
+}
+.box_login_register {
+    transform: translateX(430px);
+
+
+
+}
+.box_login h2 {
+    font-size: 32px;
+    text-align: center;
+}
+.box_login_register h2 {
+    font-size: 32px;
+    text-align: center;
+}
+.input-container {
+    
+    width: 340px;
+    height: 50px;
+    border-bottom: 2px solid #f9f9f9;
+    margin: 30px 0;;
+    display: flex;
+    position: relative;
+    
+}
+.input-container input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    ;
+}
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+.input-container label {
+    position: absolute;
+
+}
+.input-container i {
+    padding: 10px;
+    background: transparent;
+     color: #f9f9f9;
+     min-width: 50px;
+     text-align: left;
+}
+.btn{
+    background: none;
+    border: none;
+    border: 2px solid #e69b01;
+    height: 37px;
+    width: 165px;
+    padding: 10px;
+    color: #f9f9f9;
+    cursor: pointer;
+    margin: 25px auto;
+    font-size: 17px;
+    display: block;
+    justify-content: center;
+    
+}
+.newbutton {
+    justify-content: center;
+    display: flex;
+}
+.remember_forgot {
+    font-size: 15.5;
+    font-weight: 50;
+    justify-content: space-between;
+    display: flex;
+}
+.input-field {
+    color: #f9f9f9;
+    font-size: 27;
+}
+.remember_forgot {
+    z-index: 1;
+}
+.remember_forgot a {
+    color: #f9f9f9;
+    text-decoration: none;
+}
+.logi-register {
+    
+    font-size: 14.5px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 25px;
+    
+}
+.remember_forgot a:hover {
+    text-decoration: underline;
+}
+.logi-register p a {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #f9f9f9;
+    text-decoration: none;
+}
+.logi-register p a:hover {
+    text-decoration: underline;
+}
+button:hover {
+    text-decoration: rgb(178, 13, 90);
+}
