@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NIET VR Tour</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="Header.css" />
+  <link rel="stylesheet" href="chatbot.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="noida_institute_of_engineering__technology_logo.jpeg" alt="NIET Logo" />
+    </div>
+    <nav>
+      <a href="#" id="home-link">Home</a>
+      <a href="#" id="vrtour-link">VR Tour</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="tour-guide">
+      <div class="tour-content">
+        <h2>Explore NIET Virtually</h2>
+        <p>Click a location to start voice guidance.</p>
+        <div class="location-buttons">
+          <button onclick="speakDescription('reception')">Reception Area</button>
+          <button onclick="speakDescription('library')">Library</button>
+          <button onclick="speakDescription('lab')">Computer Lab</button>
+        </div>
+      </div>
+    </section>
+    
+    <section class="hero-quote-combined">
+      <div class="intro-hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+          <h1>MEET THE <span>NEW REALITY</span></h1>
+          <p class="sub-tagline">Step into NIET’s virtual world — where innovation meets experience.</p>
+          <div class="icon-row">
+            <span>🏫</span>
+            <span>🎓</span>
+            <span>🤖</span>
+            <span>🌐</span>
+          </div>
+        </div>
+      </div>
+      <div class="quote-section">
+        <div class="quote-text">
+          <h2>NIET bridges imagination and innovation</h2>
+          <p>Where every virtual step brings you closer to the heart of knowledge, culture, and future possibilities.</p>
+        </div>
+        <div class="quote-image">
+          <img src="pillar-global-1200 (1).avif" alt="NIET Global Pillars" />
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Scroll Down Indicator -->
+    <div class="scroll-indicator">
+      <span>Scroll Down</span>
+      <i class="fas fa-chevron-down bounce-arrow"></i>
+    </div>
+    <!-- Feature Cards Section -->
+    <section class="feature-section">
+      <div class="feature-card">
+        <h3>Virtual Campus</h3>
+        <p>Take a 360° immersive tour of our campus from anywhere.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Departments</h3>
+        <p>Explore our various academic departments and their strengths.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Ask Assistant</h3>
+        <p>Use our AI chatbot to ask questions and get instant help.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 💬 AI Assistant Chatbot -->
+  <div class="chatbot-icon" onclick="toggleChatbot()">💬</div>
+
+  <div class="chatbot-popup" id="chatbot-box">
+    <div class="chat-header">
+      <svg class="chatbot-logo" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 1024 1024">
+        <path d="..."></path>
+      </svg>
+      <div class="header-info">
+        <h2 class="logo-text">AI ASSISTANT</h2>
+      </div>
+      <button id="close-chatbot" class="material-symbols-rounded">
+        <i class="fas fa-arrow-down"></i>
+      </button>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+      <svg class="bot-avatar" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
+        <path d="..."></path>
+      </svg>
+      <div class="message bot-message">Hey there! How can I help you today?</div>
+    </div>
+
+    <div class="chat-footer">
+      <form id="chatForm" class="chat-form">
+        <textarea placeholder="Message..." class="message-input" required></textarea>
+        <div class="chat-controls">
+          <button type="button" class="material-symbols-rounded">😊</button>
+          <button type="button" class="material-symbols-rounded">📎</button>
+          <button type="submit" id="send-message" class="material-symbols-rounded">⬆️</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Academic</h3>
+        <ul>
+          <li><a href="#">Syllabus</a></li>
+          <li><a href="#">Academic Calendar</a></li>
+          <li><a href="#">Guidelines & Policies</a></li>
+          <li><a href="#">Departments</a></li>
+          <li><a href="#">Faculty</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Link</h3>
+        <ul>
+          <li><a href="#">NIET ERP</a></li>
+          <li><a href="#">NIET Examination Portal</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Stay Connected</h3>
+        <ul>
+          <li><a href="#">Subscribe with us</a></li>
+          <li><a href="#">Enter Email Address</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleChatbot() {
+      const chatbotBox = document.getElementById("chatbot-box");
+      chatbotBox.style.display = chatbotBox.style.display === "block" ? "none" : "block";
+    }
+
+    document.getElementById("close-chatbot").addEventListener("click", function () {
+      document.getElementById("chatbot-box").style.display = "none";
+    });
+
+    document.getElementById("chatForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const input = this.querySelector(".message-input");
+      const message = input.value.trim();
+      if (message) {
+        const chatBody = document.getElementById("chatBody");
+        const userMessage = document.createElement("div");
+        userMessage.className = "message user-message";
+        userMessage.innerText = message;
+        chatBody.appendChild(userMessage);
+        input.value = "";
+
+        chatBody.scrollTop = chatBody.scrollHeight;
+
+        const botResponse = document.createElement("div");
+        botResponse.className = "message bot-message";
+        botResponse.innerText = "Thanks for your message! (This is a demo response)";
+        setTimeout(() => {
+          chatBody.appendChild(botResponse);
+          chatBody.scrollTop = chatBody.scrollHeight;
+        }, 500);
+      }
+    });
+  </script>
+  <script src="script.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

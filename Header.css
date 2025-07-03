@@ -1,0 +1,252 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #002b5b, #004080);;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #1e1e1e;
+  position: relative;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 43, 91, 0.4); /* Optional: keep for overlay */
+  /* backdrop-filter: blur(10px); */ /* ❌ Removed blur */
+  z-index: -1;
+}
+
+
+/* Header */
+header {
+  background-color: rgba(0, 21, 45, 0.4);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid #ac9500;
+  z-index: 10; /* Keeps header on top of content */
+}
+
+.logo img {
+  height: 50px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-right: 20px; /* Adds spacing between links */
+}
+
+nav a:hover {
+  color: #ffcc00;
+}
+
+/* Intro Section */
+.intro {
+  text-align: left;
+  padding: 3rem 4rem 1rem;
+  color: #fff;
+  z-index: 5; /* Ensures intro text is on top */
+}
+
+.intro h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.intro h1 span {
+  color: #ffcc00;
+}
+
+.intro p {
+  font-size: 1.4rem;
+  color: #ddd;
+}
+
+/* Content */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  z-index: 5; /* Keeps content above background */
+}
+
+/* Centered Video */
+.video-box {
+  width: 70%;
+  max-width: 900px;
+  height: 400px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.video-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Chatbot Floating Button */
+.chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #002b5b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.chat-toggle:hover {
+  transform: scale(1.1); /* Adds hover effect to increase button size */
+}
+
+/* Chatbot Container */
+.chatbot-container {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Ensures chatbot stays on top */
+}
+
+.chat-header {
+  background: #002b5b;
+  color: white;
+  padding: 0.5rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-weight: bold;
+}
+
+.chat-body {
+  padding: 0.5rem;
+  overflow-y: auto;
+  height: 250px;
+}
+
+#chatInput {
+  border: none;
+  border-top: 1px solid #ccc;
+  padding: 0.5rem;
+  width: 100%;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+/* Stylish Footer */
+footer {
+  background-color: #002b5b;
+  color: white;
+  font-size: 0.9rem;
+  padding: 2rem 0;
+  text-align: left;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 2rem;
+}
+
+.footer-section {
+  flex: 1 1 220px;
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-section ul li a:hover {
+  color: #ffcc00; /* Optional: Hover effect */
+}
+
+/* Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .intro h1 {
+    font-size: 2.5rem;
+  }
+
+  .video-box {
+    width: 90%;
+    height: 300px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-section {
+    margin-bottom: 15px;
+  }
+
+  .chat-toggle {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .chatbot-container {
+    width: 250px;
+  }
+}
